@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E22278F72AB97BF4001D4D7D /* ReturnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22278F62AB97BF4001D4D7D /* ReturnView.swift */; };
 		E25C17632AB8119900B91945 /* DallETestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17622AB8119900B91945 /* DallETestApp.swift */; };
-		E25C17652AB8119900B91945 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17642AB8119900B91945 /* ContentView.swift */; };
+		E25C17652AB8119900B91945 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17642AB8119900B91945 /* MainView.swift */; };
 		E25C17672AB8119A00B91945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25C17662AB8119A00B91945 /* Assets.xcassets */; };
 		E25C176A2AB8119A00B91945 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25C17692AB8119A00B91945 /* Preview Assets.xcassets */; };
 		E25C17742AB8119A00B91945 /* DallETestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17732AB8119A00B91945 /* DallETestTests.swift */; };
 		E25C177E2AB8119A00B91945 /* DallETestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C177D2AB8119A00B91945 /* DallETestUITests.swift */; };
 		E25C17802AB8119A00B91945 /* DallETestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C177F2AB8119A00B91945 /* DallETestUITestsLaunchTests.swift */; };
+		E25C17962AB836A300B91945 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E25C17952AB836A300B91945 /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E22278F62AB97BF4001D4D7D /* ReturnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnView.swift; sourceTree = "<group>"; };
 		E25C175F2AB8119900B91945 /* DallETest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DallETest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25C17622AB8119900B91945 /* DallETestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallETestApp.swift; sourceTree = "<group>"; };
-		E25C17642AB8119900B91945 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E25C17642AB8119900B91945 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E25C17662AB8119A00B91945 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E25C17692AB8119A00B91945 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E25C176F2AB8119A00B91945 /* DallETestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DallETestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,8 @@
 		E25C17792AB8119A00B91945 /* DallETestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DallETestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25C177D2AB8119A00B91945 /* DallETestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallETestUITests.swift; sourceTree = "<group>"; };
 		E25C177F2AB8119A00B91945 /* DallETestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallETestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E25C17902AB8304300B91945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E25C17952AB836A300B91945 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = Resource/Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 		E25C17562AB8119900B91945 = {
 			isa = PBXGroup;
 			children = (
+				E25C17952AB836A300B91945 /* Fonts */,
 				E25C17612AB8119900B91945 /* DallETest */,
 				E25C17722AB8119A00B91945 /* DallETestTests */,
 				E25C177C2AB8119A00B91945 /* DallETestUITests */,
@@ -94,10 +100,12 @@
 		E25C17612AB8119900B91945 /* DallETest */ = {
 			isa = PBXGroup;
 			children = (
+				E25C17902AB8304300B91945 /* Info.plist */,
 				E25C17622AB8119900B91945 /* DallETestApp.swift */,
-				E25C17642AB8119900B91945 /* ContentView.swift */,
+				E25C17642AB8119900B91945 /* MainView.swift */,
 				E25C17662AB8119A00B91945 /* Assets.xcassets */,
 				E25C17682AB8119A00B91945 /* Preview Content */,
+				E22278F62AB97BF4001D4D7D /* ReturnView.swift */,
 			);
 			path = DallETest;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E25C17962AB836A300B91945 /* Fonts in Resources */,
 				E25C176A2AB8119A00B91945 /* Preview Assets.xcassets in Resources */,
 				E25C17672AB8119A00B91945 /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25C17652AB8119900B91945 /* ContentView.swift in Sources */,
+				E25C17652AB8119900B91945 /* MainView.swift in Sources */,
 				E25C17632AB8119900B91945 /* DallETestApp.swift in Sources */,
+				E22278F72AB97BF4001D4D7D /* ReturnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,9 +430,11 @@
 				DEVELOPMENT_TEAM = 42NW282TDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DallETest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,9 +461,11 @@
 				DEVELOPMENT_TEAM = 42NW282TDP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DallETest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
