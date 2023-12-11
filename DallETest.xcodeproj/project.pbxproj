@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E22278F72AB97BF4001D4D7D /* ReturnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22278F62AB97BF4001D4D7D /* ReturnView.swift */; };
+		E2406EED2B1EFDCD005E0318 /* PapagoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2406EEC2B1EFDCD005E0318 /* PapagoModel.swift */; };
+		E2406EEF2B1F000F005E0318 /* DallEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2406EEE2B1F000F005E0318 /* DallEModel.swift */; };
+		E2406EF12B1F0993005E0318 /* PapagoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2406EF02B1F0993005E0318 /* PapagoViewModel.swift */; };
+		E2406EF32B1F099D005E0318 /* DallEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2406EF22B1F099D005E0318 /* DallEViewModel.swift */; };
+		E2406EF52B24BD1B005E0318 /* SecureKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2406EF42B24BD1B005E0318 /* SecureKeys.plist */; };
+		E2406EF72B26068D005E0318 /* SaveImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2406EF62B26068D005E0318 /* SaveImageViewModel.swift */; };
 		E25C17632AB8119900B91945 /* DallETestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17622AB8119900B91945 /* DallETestApp.swift */; };
 		E25C17652AB8119900B91945 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25C17642AB8119900B91945 /* MainView.swift */; };
 		E25C17672AB8119A00B91945 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25C17662AB8119A00B91945 /* Assets.xcassets */; };
@@ -37,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		E22278F62AB97BF4001D4D7D /* ReturnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnView.swift; sourceTree = "<group>"; };
+		E2406EEC2B1EFDCD005E0318 /* PapagoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoModel.swift; sourceTree = "<group>"; };
+		E2406EEE2B1F000F005E0318 /* DallEModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallEModel.swift; sourceTree = "<group>"; };
+		E2406EF02B1F0993005E0318 /* PapagoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PapagoViewModel.swift; sourceTree = "<group>"; };
+		E2406EF22B1F099D005E0318 /* DallEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallEViewModel.swift; sourceTree = "<group>"; };
+		E2406EF42B24BD1B005E0318 /* SecureKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecureKeys.plist; sourceTree = "<group>"; };
+		E2406EF62B26068D005E0318 /* SaveImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageViewModel.swift; sourceTree = "<group>"; };
 		E25C175F2AB8119900B91945 /* DallETest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DallETest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25C17622AB8119900B91945 /* DallETestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DallETestApp.swift; sourceTree = "<group>"; };
 		E25C17642AB8119900B91945 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -76,6 +88,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2406EE92B1EB110005E0318 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E25C17642AB8119900B91945 /* MainView.swift */,
+				E22278F62AB97BF4001D4D7D /* ReturnView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2406EEA2B1EB118005E0318 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2406EEC2B1EFDCD005E0318 /* PapagoModel.swift */,
+				E2406EEE2B1F000F005E0318 /* DallEModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2406EEB2B1EB126005E0318 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E2406EF02B1F0993005E0318 /* PapagoViewModel.swift */,
+				E2406EF22B1F099D005E0318 /* DallEViewModel.swift */,
+				E2406EF62B26068D005E0318 /* SaveImageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E25C17562AB8119900B91945 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +140,14 @@
 		E25C17612AB8119900B91945 /* DallETest */ = {
 			isa = PBXGroup;
 			children = (
+				E2406EEB2B1EB126005E0318 /* ViewModel */,
+				E2406EEA2B1EB118005E0318 /* Model */,
+				E2406EE92B1EB110005E0318 /* View */,
 				E25C17902AB8304300B91945 /* Info.plist */,
 				E25C17622AB8119900B91945 /* DallETestApp.swift */,
-				E25C17642AB8119900B91945 /* MainView.swift */,
 				E25C17662AB8119A00B91945 /* Assets.xcassets */,
 				E25C17682AB8119A00B91945 /* Preview Content */,
-				E22278F62AB97BF4001D4D7D /* ReturnView.swift */,
+				E2406EF42B24BD1B005E0318 /* SecureKeys.plist */,
 			);
 			path = DallETest;
 			sourceTree = "<group>";
@@ -240,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E25C17962AB836A300B91945 /* Fonts in Resources */,
+				E2406EF52B24BD1B005E0318 /* SecureKeys.plist in Resources */,
 				E25C176A2AB8119A00B91945 /* Preview Assets.xcassets in Resources */,
 				E25C17672AB8119A00B91945 /* Assets.xcassets in Resources */,
 			);
@@ -266,7 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2406EF12B1F0993005E0318 /* PapagoViewModel.swift in Sources */,
+				E2406EF72B26068D005E0318 /* SaveImageViewModel.swift in Sources */,
 				E25C17652AB8119900B91945 /* MainView.swift in Sources */,
+				E2406EF32B1F099D005E0318 /* DallEViewModel.swift in Sources */,
+				E2406EED2B1EFDCD005E0318 /* PapagoModel.swift in Sources */,
+				E2406EEF2B1F000F005E0318 /* DallEModel.swift in Sources */,
 				E25C17632AB8119900B91945 /* DallETestApp.swift in Sources */,
 				E22278F72AB97BF4001D4D7D /* ReturnView.swift in Sources */,
 			);
@@ -355,6 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -409,6 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -431,6 +481,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DallETest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DALL·E 2 한국어";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이미지를 저장하려면 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "이미지를 저장하려면 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -462,6 +515,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DallETest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "DALL·E 2 한국어";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "이미지를 저장하려면 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "이미지를 저장하려면 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

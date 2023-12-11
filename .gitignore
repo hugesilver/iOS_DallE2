@@ -1,0 +1,4 @@
+*.ttf
+*.otf
+.DS_Store
+SecureKeys.plist
