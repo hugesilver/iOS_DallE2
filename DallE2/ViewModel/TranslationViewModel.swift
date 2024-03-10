@@ -1,5 +1,5 @@
 //
-//  DallEViewModel.swift
+//  PapagoViewModel.swift
 //  DallETest
 //
 //  Created by 김태은 on 12/5/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DallEViewModel: ObservableObject {
+class TranslationViewModel: ObservableObject {
     var openAIApiKey: String {
         guard let plistPath = Bundle.main.path(forResource: "SecureKeys", ofType: "plist"),
               let plistDict = NSDictionary(contentsOfFile: plistPath) else {
@@ -21,8 +21,8 @@ class DallEViewModel: ObservableObject {
         return value
     }
     
-    func postDallE(prompt: String, completion: @escaping (DallEModel?) -> Void) {
-        let url = "https://api.openai.com/v1/images/generations"
+    func postTranslation(prompt: String, completion: @escaping (TranslationModel?) -> Void) {
+        let url = "https://api.openai.com/v1/chat/completions"
         
         // Header 세팅
         var request = URLRequest(url: URL(string: url)!)
@@ -31,10 +31,10 @@ class DallEViewModel: ObservableObject {
         request.addValue("Bearer \(openAIApiKey)", forHTTPHeaderField: "Authorization")
         
         let body: [String: Any] = [
-            "model": "dall-e-2",
-            "prompt": prompt,
-            "n": 5,
-            "size": "256x256"
+            "model": "gpt-3.5-turbo",
+            "messages": [
+                ["role": "user", "content": "translate \(prompt) to English, and only say a single word without explanation"]
+            ],
         ]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         
@@ -42,14 +42,14 @@ class DallEViewModel: ObservableObject {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
-                    // if let jsonString = String(data: data, encoding: .utf8) {
-                    //     print("Received JSON data: \(jsonString)")
-                    // }
+                     // if let jsonString = String(data: data, encoding: .utf8) {
+                     //     print("Received JSON data: \(jsonString)")
+                     // }
                     
                     // DallEModel JSON 디코드
                     let decoder = JSONDecoder()
-                    let dallEModel = try decoder.decode(DallEModel.self, from: data)
-                    completion(dallEModel)
+                    let model = try decoder.decode(TranslationModel.self, from: data)
+                    completion(model)
                 } catch {
                     print("JSON 파싱 오류: \(error.localizedDescription)")
                     completion(nil)

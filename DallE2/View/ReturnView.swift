@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct ReturnView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @StateObject var saveImageViewModel = SaveImageViewModel()
     
-    @Environment(\.presentationMode) var presentationMode
-    @Binding var imageData: Array<DallEModel.Data>
+    @Binding var imageData: [DallEModel.Data]
     
     @State private var imageUrl: String = ""
     
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)
     
     var body: some View {
-        VStack(alignment: .leading){
-            Button{
+        VStack(alignment: .leading) {
+            Button {
                 imageData = []
                 presentationMode.wrappedValue.dismiss()
             } label: {
@@ -27,26 +28,25 @@ struct ReturnView: View {
                     .frame(width: 15, height: 24)
             }
             .padding(EdgeInsets(top: 30, leading: 20, bottom: 20, trailing: 0))
-            ScrollView{
-                LazyVGrid(columns: columns){
+            ScrollView {
+                LazyVGrid(columns: columns) {
                     ForEach(imageData, id: \.self) { data in
-                        AsyncImage(url: URL(string: data.url)) {image in
+                        AsyncImage(url: URL(string: data.url)) { image in
                             image.resizable()
                         } placeholder: {
                             Color(red: 0.85098, green: 0.85098, blue: 0.85098)
                         }
                         .cornerRadius(20)
                         .frame(width: 163.75, height: 163.75)
-                        .padding([.horizontal,
-                                  .vertical], 10.83
-                        )
+                        .padding([.horizontal, .vertical], 10.83)
                         .onTapGesture {
                             imageUrl = data.url
                             saveImageViewModel.checkAgree()
                         }
                         
                     }
-                }.padding(EdgeInsets(top: 20, leading: 10.83, bottom: 0, trailing: 10.83))
+                }
+                .padding(EdgeInsets(top: 20, leading: 10.83, bottom: 0, trailing: 10.83))
             }
             .alert(isPresented: $saveImageViewModel.showAlert) {
                 switch saveImageViewModel.activeAlert {

@@ -10,14 +10,14 @@ import SwiftUI
 struct MainView: View {
     @State private var isLoading = false
     
-    @StateObject private var papagoViewModel = PapagoViewModel()
+    @StateObject private var translationViewModel = TranslationViewModel()
     @StateObject private var dallEViewModel = DallEViewModel()
     
     @State private var prompt: String = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
     
-    @State var imagesData: Array<DallEModel.Data> = []
+    @State var imagesData: [DallEModel.Data] = []
     
     private var textFieldWidth: CGFloat = 280
     private var radius: CGFloat {return CGFloat(textFieldWidth / 2)}
@@ -32,7 +32,8 @@ struct MainView: View {
                         .frame(width: 119, height: 119)
                         .foregroundColor(.accentColor)
                         .padding(EdgeInsets(top: 0, leading:0, bottom: 10, trailing: 0))
-                    Text("DALL-E 2\nIMAGE GENERATE PROJECT")
+                    
+                    Text("DALL-E 2\nIMAGE GENERATION PROJECT")
                         .font(.custom("Pretendard", size:16).weight(.medium))
                         .foregroundColor(Color(red:1, green:1, blue: 1))
                         .multilineTextAlignment(.center)
@@ -41,7 +42,8 @@ struct MainView: View {
                 
                 VStack{
                     Spacer()
-                    TextField("Enter Prompt", text: $prompt, onCommit: fetchPapago)
+                    
+                    TextField("Enter Prompt", text: $prompt, onCommit: fetchChatGPT)
                         .frame(width: textFieldWidth, height: 52)
                         .font(.custom("Pretendard", size:22).weight(.regular))
                         .background(RoundedRectangle(cornerRadius: radius).fill( Color(red:1,green:1, blue:1)))
@@ -64,12 +66,12 @@ struct MainView: View {
         .ignoresSafeArea()
     }
     
-    func fetchPapago() {
-        if(!prompt.isEmpty){
+    func fetchChatGPT() {
+        if !prompt.isEmpty {
             isLoading = true
-            papagoViewModel.postPapago(prompt: prompt) {papagoModel in
-                if let papagoModel = papagoModel {
-                    let translated = papagoModel.message.result.translatedText
+            translationViewModel.postTranslation(prompt: prompt) { translationModel in
+                if let translationModel = translationModel {
+                    let translated = translationModel.choices[0].message.content
                     print(translated)
                     fetchDallE(translated: translated)
                     prompt = ""
@@ -84,7 +86,7 @@ struct MainView: View {
     }
     
     func fetchDallE(translated: String) {
-        dallEViewModel.postDallE(prompt: translated) {dallEModel in
+        dallEViewModel.postDallE(prompt: translated) { dallEModel in
             if let dallEModel = dallEModel {
                 let data = dallEModel.data
                 print(data)
