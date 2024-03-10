@@ -33,7 +33,7 @@ class TranslationViewModel: ObservableObject {
         let body: [String: Any] = [
             "model": "gpt-3.5-turbo",
             "messages": [
-                ["role": "user", "content": "translate \(prompt) to English, and only say a single word without explanation"]
+                ["role": "user", "content": "translate \"\(prompt)\" to English, without explanation"]
             ],
         ]
         request.httpBody = try? JSONSerialization.data(withJSONObject: body)
